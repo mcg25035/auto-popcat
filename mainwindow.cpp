@@ -12,8 +12,8 @@ void MainWindow::pop_cat(){
     QNetworkRequest req(url);
     QNetworkReply * reply = mgr.get(req);
     eventLoop.exec();
-    qDebug()<<reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-    qDebug()<<reply->readAll();
+    ui->textEdit->setPlainText(ui->textEdit->toPlainText()+"\n"+QString::number(reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt()));
+    ui->textEdit->setPlainText(ui->textEdit->toPlainText()+"\n"+QString(reply->readAll()));
 }
 
 MainWindow::MainWindow(QWidget *parent)
