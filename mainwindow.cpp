@@ -36,7 +36,7 @@ void MainWindow::pop_cat(){
         ui->failure_times->setText(QString::number(ui->failure_times->text().toInt()+1));
     }
     ui->textEdit->setPlainText(ui->textEdit->toPlainText()+"\n"+QString::number(reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt()));
-    ui->textEdit->setPlainText(ui->textEdit->toPlainText()+"\n"+QString(reply->readAll())+"------------------------------------------------------------------");
+    ui->textEdit->setPlainText(ui->textEdit->toPlainText()+"\n"+QString(reply->readAll())+"\n------------------------------------------------------------------");
 }
 
 MainWindow::MainWindow(QWidget *parent)
